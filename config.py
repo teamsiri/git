@@ -7,22 +7,22 @@ from pyrogram import filters
 load_dotenv()
 
 # Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID",11430350))
-API_HASH = getenv("API_HASH","eae493b15b16c07b87ed6c84d671d719")
+API_ID = int(getenv("API_ID",""))
+API_HASH = getenv("API_HASH","")
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN","6568673101:AAHO3PiIcjDvPDFXKk6DNAiDLjXsPYroFcw")
+BOT_TOKEN = getenv("BOT_TOKEN","")
 
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://alExNazih:alEx@cluster0.pxt6xwy.mongodb.net/")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 480))
 
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID",'-1001324058159'))
+LOGGER_ID = int(getenv("LOGGER_ID",'-1001842275903'))
 
 # Get this value from @FallenxBot on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", 2067261869))
+OWNER_ID = int(getenv("OWNER_ID", 5277936711))
 
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
@@ -32,27 +32,27 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/abdokmo/AnonXMusic.git",
+    "https://github.com/teamsiri/git",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/TeAmRecode")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/TeAmRecode")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/SourceSiri")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/SourceSiri")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 
 CHANNEL_SUDO = getenv(
-    "CHANNEL_SUDO", "TeamRecode"
+    "CHANNEL_SUDO", "SourceSiri"
 )  # معرف قناتك بدون @
 YAFA_NAME = getenv(
-    "YAFA_NAME", ". TeAm ReCode ."
+    "YAFA_NAME", ". Source Siri ."
 )  # اسم قناتك
 YAFA_CHANNEL = getenv(
-   " YAFA_CHANNEL", "https://t.me/TeAmRecode"
+   " YAFA_CHANNEL", "https://t.me/SourceSiri"
 ) 
 # Get this credentials from https://developer.spotify.com/dashboard
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
@@ -89,13 +89,13 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/f010cf8e3b6edafb753b7.jpg"
+    "START_IMG_URL", "https://telegra.ph/file/220034b1e9af0ee930981.jpg"
 )
 PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://te.legra.ph/file/b8a0c1a00db3e57522b53.jpg"
 )
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg"
-STATS_IMG_URL = "https://telegra.ph/file/8629735bddf8990fe6eb2.jpg"
+STATS_IMG_URL = "https://telegra.ph/file/220034b1e9af0ee930981.jpg"
 TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
 TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
 STREAM_IMG_URL = "https://te.legra.ph/file/bd995b032b6bd263e2cc9.jpg"
