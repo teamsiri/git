@@ -55,6 +55,11 @@ YAFA_NAME = getenv(
 YAFA_CHANNEL = getenv(
    " YAFA_CHANNEL", "https://t.me/SourceSiri"
 ) 
+
+SUPPORT_GROUP = getenv(
+    "SUPPORT_GROUP", "https://t.me/SourceSiri"
+)
+
 # Get this credentials from https://developer.spotify.com/dashboard
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
