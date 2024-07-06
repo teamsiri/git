@@ -60,6 +60,10 @@ SUPPORT_GROUP = getenv(
     "SUPPORT_GROUP", "https://t.me/SourceSiri"
 )
 
+BOT_USERNAME = getenv(
+    "BOT_USERNAME", "zr3bot"
+)
+
 # Get this credentials from https://developer.spotify.com/dashboard
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
