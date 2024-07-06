@@ -9,6 +9,7 @@ hachoir
 heroku3
 motor
 pillow
+pySmartDL
 psutil
 py-tgcalls==0.9.7
 pykeyboard
