@@ -57,7 +57,7 @@ async def song(_, message: Message):
     # تحقق من الاشتراك الإجباري
     await must_join_channel(app, message)
 
-    m = await message.reply_text("⦗ جارِ البحث يرجى الانتضار ⦘", quote=True)
+    m = await message.reply_text("جارِ البحث يرجى الانتضار ...", quote=True)
 
     query = " ".join(str(i) for i in message.command[1:])
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -91,7 +91,7 @@ async def song(_, message: Message):
                 audio_file = ydl.prepare_filename(info_dict)
                 ydl.process_info(info_dict)
 
-            rep = f"**• by :** {message.from_user.first_name if message.from_user else 'Freedom'} \n⎯ ⎯ ⎯ ⎯\n• ch : @{CHANNEL_SUDO} ."
+            rep = f"• by : {message.from_user.first_name if message.from_user else 'Freedom'} \n⎯ ⎯ ⎯ ⎯\n• ch : @{CHANNEL_SUDO} ."
 
             secmul, dur, dur_arr = 1, 0, duration.split(":")
             for i in range(len(dur_arr) - 1, -1, -1):
@@ -100,7 +100,7 @@ async def song(_, message: Message):
 
             visit_butt = InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton(text="⦗ Источник ⦘", url=SUPPORT_CHANNEL)],
+                    [InlineKeyboardButton(text=". Source Siri .", url=SUPPORT_CHANNEL)],
                 ]
             )
             # Reply to the user who initiated the search
@@ -166,7 +166,7 @@ async def video_search(client, message):
         results[0]["url_suffix"]
         results[0]["views"]
         
-        msg = await message.reply("⦗ جارِ البحث يرجى الانتضار ⦘")
+        msg = await message.reply("جارِ البحث يرجى الانتضار ...")
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ytdl:
                 ytdl_data = ytdl.extract_info(link, download=True)
@@ -178,7 +178,7 @@ async def video_search(client, message):
         if not os.path.exists(thumb_path):
             return await msg.edit(f"🚫 **error:** Thumb file not found!")
         
-        await msg.edit("⦗ جارِ التحميل، يرجى الانتظار قليلاً ... ⦘")
+        await msg.edit("جارِ التحميل، يرجى الانتظار قليلاً ...")
         await message.reply_video(
             file_name,
             duration=int(ytdl_data["duration"]),
@@ -256,4 +256,3 @@ async def handle_callback_query(client, callback_query: CallbackQuery):
     
 
     await client.delete_messages(chat_id=callback_query.message.chat.id, message_ids=[last_clicked_button.get(callback_query.message.chat.id)])
-
