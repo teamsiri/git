@@ -2,6 +2,7 @@ import os
 import re
 import requests
 import yt_dlp
+from pySmartDL import SmartDL
 from strings.filters import command
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
