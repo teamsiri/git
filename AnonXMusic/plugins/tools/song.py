@@ -8,28 +8,28 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from youtube_search import YoutubeSearch
 from AnonXMusic import app
-from config import SUPPORT_CHANNEL, Muntazer
+from config import SUPPORT_CHANNEL, CHANNEL_SUDO
 from pyrogram.errors import UserNotParticipant, ChatAdminRequired, ChatWriteForbidden
 last_clicked_button = {}
 # دالة للتحقق من اشتراك المستخدم في القناة
 async def must_join_channel(app, msg):
-    if not Muntazer:
+    if not CHANNEL_SUDO:
         return
     try:
         if msg.from_user is None:
             return
         
         try:
-            await app.get_chat_member(Muntazer, msg.from_user.id)
+            await app.get_chat_member(CHANNEL_SUDO, msg.from_user.id)
         except UserNotParticipant:
-            if Muntazer.isalpha():
+            if CHANNEL_SUDO.isalpha():
                 link = "https://t.me/" + Muntazer
             else:
-                chat_info = await app.get_chat(Muntazer)
+                chat_info = await app.get_chat(CHANNEL_SUDO)
                 link = chat_info.invite_link
             try:
                 await msg.reply(
-                    f"~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : @{Muntazer}.",
+                    f"~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : @{CHANNEL_SUDO}.",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup([
                         [InlineKeyboardButton("⦗ قناة البوت ⦘", url=link)]
@@ -39,7 +39,7 @@ async def must_join_channel(app, msg):
             except ChatWriteForbidden:
                 pass
     except ChatAdminRequired:
-        print(f"I'm not admin in the MUST_JOIN chat {Muntazer}!")
+        print(f"I'm not admin in the MUST_JOIN chat {CHANNEL_SUDO}!")
 
 
 def is_valid_youtube_url(url):
