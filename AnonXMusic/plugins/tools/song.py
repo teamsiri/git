@@ -23,7 +23,7 @@ async def must_join_channel(app, msg):
             await app.get_chat_member(CHANNEL_SUDO, msg.from_user.id)
         except UserNotParticipant:
             if CHANNEL_SUDO.isalpha():
-                link = "https://t.me/" + Muntazer
+                link = "https://t.me/" + CHANNEL_SUDO
             else:
                 chat_info = await app.get_chat(CHANNEL_SUDO)
                 link = chat_info.invite_link
